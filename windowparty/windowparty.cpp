@@ -3,10 +3,18 @@
 //
 
 #include <iostream>
+#include <windows.h>
+
+// 무한 < esc로 종료
+// 2초에 한번씩 마우스를 따라다니면서 윈도우 창이뜸
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+    return DefWindowProc(hwnd, uMsg, wParam, lParam);
+}
 
 
 int main()
 {
+    HINSTANCE hInstance = GetModuleHandle(NULL);                                                
     std::cout << "Hello World!\n";
 
     HWND hwnd = CreateWindowEx(WS_EX_TOPMOST | WS_EX_LAYERED, ...);
