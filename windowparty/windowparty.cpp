@@ -26,6 +26,15 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
     wc.hInstance = hInstance;
     wc.lpszClassName = CLASS_NAME;
     RegisterClass(&wc);
+
+    //Create; the window
+    HWND hwnd = CreateWindowEx(
+        0,//optional window style
+        CLASS_NAME,
+        L"Learn to proggram windows",
+        WS_OVERLAPPENDWINDOW,//window style
+    )
+    
 }
 
 
